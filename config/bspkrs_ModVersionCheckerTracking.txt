@@ -5,8 +5,8 @@ version_check_tracker {
     S:bspkrsCore=6.9
 
     runs_since_last_message {
-        I:Treecapitator=2
-        I:bspkrsCore=2
+        I:Treecapitator=3
+        I:bspkrsCore=3
     }
 
 }
