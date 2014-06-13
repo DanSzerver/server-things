@@ -1,12 +1,12 @@
 # Configuration file
 
 version_check_tracker {
-    S:Treecapitator=2.0.1
-    S:bspkrsCore=6.9
+    S:Treecapitator=2.0.3
+    S:bspkrsCore=6.11
 
     runs_since_last_message {
-        I:Treecapitator=3
-        I:bspkrsCore=3
+        I:Treecapitator=4
+        I:bspkrsCore=4
     }
 
 }
