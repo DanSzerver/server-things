@@ -1,0 +1,114 @@
+---- Minecraft Crash Report ----
+// Ooh. Shiny.
+
+Time: 26/10/13 2:53 AM
+Description: Unexpected error
+
+java.lang.ArrayIndexOutOfBoundsException: -1
+	at net.minecraft.world.biome.WorldChunkManager.func_76936_a(WorldChunkManager.java:86)
+	at net.minecraft.world.biome.BiomeCacheBlock.<init>(SourceFile:29)
+	at net.minecraft.world.biome.BiomeCache.func_76840_a(SourceFile:59)
+	at net.minecraft.world.biome.BiomeCache.func_76837_b(SourceFile:68)
+	at net.minecraft.world.biome.WorldChunkManager.func_76935_a(WorldChunkManager.java:67)
+	at net.minecraft.world.chunk.Chunk.func_76591_a(Chunk.java:1492)
+	at net.minecraft.world.World.getBiomeGenForCoordsBody(World.java:207)
+	at net.minecraft.world.WorldProvider.getBiomeGenForCoords(WorldProvider.java:426)
+	at net.minecraft.world.World.func_72807_a(World.java:196)
+	at net.minecraftforge.client.ForgeHooksClient.getSkyBlendColour(ForgeHooksClient.java:369)
+	at net.minecraft.world.World.getSkyColorBody(World.java:1839)
+	at net.minecraft.world.WorldProvider.getSkyColor(WorldProvider.java:437)
+	at net.minecraft.world.World.func_72833_a(World.java:1817)
+	at net.minecraft.client.renderer.EntityRenderer.func_78466_h(EntityRenderer.java:1982)
+	at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1428)
+	at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1115)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:946)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:838)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.world.biome.WorldChunkManager.func_76936_a(WorldChunkManager.java:86)
+	at net.minecraft.world.biome.BiomeCacheBlock.<init>(SourceFile:29)
+	at net.minecraft.world.biome.BiomeCache.func_76840_a(SourceFile:59)
+	at net.minecraft.world.biome.BiomeCache.func_76837_b(SourceFile:68)
+	at net.minecraft.world.biome.WorldChunkManager.func_76935_a(WorldChunkManager.java:67)
+	at net.minecraft.world.chunk.Chunk.func_76591_a(Chunk.java:1492)
+	at net.minecraft.world.World.getBiomeGenForCoordsBody(World.java:207)
+	at net.minecraft.world.WorldProvider.getBiomeGenForCoords(WorldProvider.java:426)
+	at net.minecraft.world.World.func_72807_a(World.java:196)
+	at net.minecraftforge.client.ForgeHooksClient.getSkyBlendColour(ForgeHooksClient.java:369)
+	at net.minecraft.world.World.getSkyColorBody(World.java:1839)
+	at net.minecraft.world.WorldProvider.getSkyColor(WorldProvider.java:437)
+	at net.minecraft.world.World.func_72833_a(World.java:1817)
+	at net.minecraft.client.renderer.EntityRenderer.func_78466_h(EntityRenderer.java:1982)
+	at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1428)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['DanSze'/345, l='MpServer', x=8.50, y=66.62, z=8.50]]
+	Chunk stats: MultiplayerChunkCache: 0
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (128,64,256), Chunk: (at 0,4,0 in 8,16; contains blocks 128,0,256 to 143,255,271), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 5372 game time, 5372 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 1 total; [EntityClientPlayerMP['DanSze'/345, l='MpServer', x=8.50, y=66.62, z=8.50]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:440)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2312)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:863)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.6.4
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 274734384 bytes (262 MB) / 442892288 bytes (422 MB) up to 954466304 bytes (910 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+	AABB Pool Size: 3 (168 bytes; 0 MB) allocated, 3 (168 bytes; 0 MB) used
+	Suspicious classes: FML and Forge are installed
+	IntCache: cache: 0, tcache: 0, allocated: 2, tallocated: 79
+	FML: MCP v8.11 FML v6.4.30.933 Minecraft Forge 9.11.1.933 Optifine OptiFine_1.6.4_HD_U_C6 8 mods loaded, 8 mods active
+	mcp{8.09} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	FML{6.4.30.933} [Forge Mod Loader] (minecraftforge-9.11.1.933.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Forge{9.11.1.933} [Minecraft Forge] (minecraftforge-9.11.1.933.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	bspkrsCore{v4.1(1.6.4)} [bspkrsCore] ([1.6.4]bspkrsCorev4.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	mod_bspkrsCore{v4.1(1.6.4)} [bspkrsCore] ([1.6.4]bspkrsCorev4.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	TreeCapitator{Forge 1.6.4.r02} [Treecapitator] ([1.6.4]TreeCapitator.Forge.1.6.4.r02.Universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	ExtrabiomesXL{3.14.2} [ExtrabiomesXL] (ExtrabiomesXL-universal-1.6.4-3.14.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Thaumcraft{4.0.2a} [Thaumcraft] (Thaumcraft4.0.2a.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Launched Version: 1.6.4-Forge9.11.1.933
+	LWJGL: 2.9.0
+	OpenGL: GeForce GTX 770/PCIe/SSE2 GL version 4.3.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Pack: Default
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 11 (616 bytes; 0 MB) allocated, 11 (616 bytes; 0 MB) used

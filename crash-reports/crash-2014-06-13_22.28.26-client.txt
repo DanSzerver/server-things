@@ -1,0 +1,116 @@
+---- Minecraft Crash Report ----
+// I let you down. Sorry :(
+
+Time: 6/13/14 10:28 PM
+Description: Rendering screen
+
+java.lang.OutOfMemoryError: Java heap space
+	at io.netty.util.Recycler$Stack.newArray(Recycler.java:112)
+	at io.netty.util.Recycler$Stack.<init>(Recycler.java:78)
+	at io.netty.util.Recycler$1.initialValue(Recycler.java:32)
+	at io.netty.util.Recycler$1.initialValue(Recycler.java:29)
+	at java.lang.ThreadLocal.setInitialValue(Unknown Source)
+	at java.lang.ThreadLocal.get(Unknown Source)
+	at io.netty.util.Recycler.get(Recycler.java:37)
+	at io.netty.channel.ChannelOutboundBuffer.newInstance(ChannelOutboundBuffer.java:56)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.<init>(AbstractChannel.java:375)
+	at io.netty.channel.local.LocalChannel$LocalUnsafe.<init>(LocalChannel.java:319)
+	at io.netty.channel.local.LocalChannel$LocalUnsafe.<init>(LocalChannel.java:319)
+	at io.netty.channel.local.LocalChannel.newUnsafe(LocalChannel.java:134)
+	at io.netty.channel.AbstractChannel.<init>(AbstractChannel.java:77)
+	at io.netty.channel.local.LocalChannel.<init>(LocalChannel.java:91)
+	at io.netty.channel.local.LocalServerChannel.serve(LocalServerChannel.java:134)
+	at io.netty.channel.local.LocalChannel$LocalUnsafe.connect(LocalChannel.java:368)
+	at io.netty.channel.DefaultChannelPipeline$HeadHandler.connect(DefaultChannelPipeline.java:1008)
+	at io.netty.channel.DefaultChannelHandlerContext.invokeConnect(DefaultChannelHandlerContext.java:494)
+	at io.netty.channel.DefaultChannelHandlerContext.connect(DefaultChannelHandlerContext.java:479)
+	at io.netty.channel.DefaultChannelHandlerContext.connect(DefaultChannelHandlerContext.java:464)
+	at io.netty.channel.DefaultChannelPipeline.connect(DefaultChannelPipeline.java:847)
+	at io.netty.channel.AbstractChannel.connect(AbstractChannel.java:198)
+	at io.netty.bootstrap.Bootstrap$2.run(Bootstrap.java:165)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:354)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:348)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$2.run(SingleThreadEventExecutor.java:101)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at io.netty.util.Recycler$Stack.newArray(Recycler.java:112)
+	at io.netty.util.Recycler$Stack.<init>(Recycler.java:78)
+	at io.netty.util.Recycler$1.initialValue(Recycler.java:32)
+	at io.netty.util.Recycler$1.initialValue(Recycler.java:29)
+	at java.lang.ThreadLocal.setInitialValue(Unknown Source)
+	at java.lang.ThreadLocal.get(Unknown Source)
+	at io.netty.util.Recycler.get(Recycler.java:37)
+	at io.netty.channel.ChannelOutboundBuffer.newInstance(ChannelOutboundBuffer.java:56)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.<init>(AbstractChannel.java:375)
+	at io.netty.channel.local.LocalChannel$LocalUnsafe.<init>(LocalChannel.java:319)
+	at io.netty.channel.local.LocalChannel$LocalUnsafe.<init>(LocalChannel.java:319)
+	at io.netty.channel.local.LocalChannel.newUnsafe(LocalChannel.java:134)
+	at io.netty.channel.AbstractChannel.<init>(AbstractChannel.java:77)
+	at io.netty.channel.local.LocalChannel.<init>(LocalChannel.java:91)
+	at io.netty.channel.local.LocalServerChannel.serve(LocalServerChannel.java:134)
+	at io.netty.channel.local.LocalChannel$LocalUnsafe.connect(LocalChannel.java:368)
+	at io.netty.channel.DefaultChannelPipeline$HeadHandler.connect(DefaultChannelPipeline.java:1008)
+
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.client.gui.GuiMainMenu
+	Mouse location: Scaled: (390, 203). Absolute: (781, 492)
+	Screen size: Scaled: (800, 450). Absolute: (1600, 900). Scale factor of 2
+Stacktrace:
+	at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1067)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:944)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:835)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 8064456 bytes (7 MB) / 737083392 bytes (702 MB) up to 954466304 bytes (910 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 13, tcache: 83, allocated: 1, tallocated: 9
+	FML: MCP v9.03 FML v7.2.209.1112 Minecraft Forge 10.12.1.1112 19 mods loaded, 19 mods active
+	mcp{9.03} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	FML{7.2.209.1112} [Forge Mod Loader] (forge-1.7.2-10.12.1.1112.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Forge{10.12.1.1112} [Minecraft Forge] (forge-1.7.2-10.12.1.1112.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	bspkrsCore{6.9} [bspkrsCore] ([1.7.2]bspkrsCore-universal-6.9.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Treecapitator{1.7.2} [Treecapitator] ([1.7.2]Treecapitator-universal-2.0.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BiblioCraft{1.7.1} [BiblioCraft] (BiblioCraft[1.7.1][MC1.7.2].jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Core{6.0.16} [BuildCraft] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Builders{6.0.16} [BC Builders] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Energy{6.0.16} [BC Energy] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Factory{6.0.16} [BC Factory] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Transport{6.0.16} [BC Transport] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Silicon{6.0.16} [BC Silicon] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	IC2{2.1.478-experimental} [IndustrialCraft 2] (industrialcraft-2-2.1.478-experimental.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Forestry{2.4.1.25} [Forestry for Minecraft] (forestry_1.7.2-2.4.1.25.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Mystcraft{0.10.15.00} [Mystcraft] (mystcraft-1.7.2-0.10.15.00.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Baubles{1.0.0.13} [Baubles] (Baubles-1.7.2-1.0.0.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Thaumcraft{4.1.1.14} [Thaumcraft] (Thaumcraft-1.7.2-4.1.1.14.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	voxelmap{1.7.2} [VoxelMap] (voxelmap-1.7.2-1.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	weaponmod{1.7.2 v1.14.2} [Balkon's WeaponMod] (weaponmod-1.14.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Launched Version: 1.7.2-Forge10.12.1.1112
+	LWJGL: 2.9.0
+	OpenGL: GeForce GTX 770/PCIe/SSE2 GL version 4.4.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null
+	Anisotropic Filtering: Off (1)

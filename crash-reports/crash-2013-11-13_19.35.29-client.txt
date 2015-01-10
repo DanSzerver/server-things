@@ -1,0 +1,99 @@
+---- Minecraft Crash Report ----
+// Why is it breaking :(
+
+Time: 13/11/13 7:35 PM
+Description: Rendering screen
+
+java.lang.NullPointerException
+	at am2.guis.GuiArcaneCompendium.renderCraftingComponent(GuiArcaneCompendium.java:1054)
+	at am2.guis.GuiArcaneCompendium.RenderRecipe(GuiArcaneCompendium.java:963)
+	at am2.guis.GuiArcaneCompendium.drawRightPage_Block_Item(GuiArcaneCompendium.java:661)
+	at am2.guis.GuiArcaneCompendium.drawRightPage(GuiArcaneCompendium.java:565)
+	at am2.guis.GuiArcaneCompendium.func_73863_a(GuiArcaneCompendium.java:485)
+	at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1036)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:946)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:838)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at am2.guis.GuiArcaneCompendium.renderCraftingComponent(GuiArcaneCompendium.java:1054)
+	at am2.guis.GuiArcaneCompendium.RenderRecipe(GuiArcaneCompendium.java:963)
+	at am2.guis.GuiArcaneCompendium.drawRightPage_Block_Item(GuiArcaneCompendium.java:661)
+	at am2.guis.GuiArcaneCompendium.drawRightPage(GuiArcaneCompendium.java:565)
+	at am2.guis.GuiArcaneCompendium.func_73863_a(GuiArcaneCompendium.java:485)
+
+-- Screen render details --
+Details:
+	Screen name: am2.guis.GuiArcaneCompendium
+	Mouse location: Scaled: (155, 174). Absolute: (310, 350)
+	Screen size: Scaled: (550, 350). Absolute: (1100, 700). Scale factor of 2
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['DanSze'/53794, l='MpServer', x=652.69, y=65.62, z=-17.07]]
+	Chunk stats: MultiplayerChunkCache: 441
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (27,64,220), Chunk: (at 11,4,12 in 1,13; contains blocks 16,0,208 to 31,255,223), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 14998 game time, 2562 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 80 total; [EntityCreeper['Creeper'/116684, l='MpServer', x=631.50, y=32.00, z=-65.50], EntityCreeper['Creeper'/116683, l='MpServer', x=630.50, y=32.00, z=-68.50], EntityBat['Bat'/116615, l='MpServer', x=677.73, y=36.00, z=-80.55], EntitySkeleton['Skeleton'/116541, l='MpServer', x=691.50, y=22.00, z=-78.50], EntityHecate['Hecate'/116542, l='MpServer', x=690.50, y=22.00, z=-80.50], EntityHecate['Hecate'/116474, l='MpServer', x=707.50, y=36.00, z=-33.50], EntitySheep['Sheep'/80100, l='MpServer', x=628.50, y=64.00, z=-62.50], EntitySheep['Sheep'/80097, l='MpServer', x=624.50, y=64.00, z=-56.50], EntitySkeleton['Skeleton'/116466, l='MpServer', x=715.50, y=37.00, z=-5.50], EntitySheep['Sheep'/80099, l='MpServer', x=630.50, y=64.00, z=-62.50], EntitySheep['Sheep'/80098, l='MpServer', x=627.50, y=64.00, z=-60.50], EntitySkeleton['Skeleton'/118364, l='MpServer', x=653.50, y=27.00, z=-68.50], EntityEnderman['Enderman'/116423, l='MpServer', x=717.50, y=33.00, z=-55.50], EntitySkeleton['Skeleton'/118361, l='MpServer', x=648.50, y=27.00, z=-70.50], EntitySkeleton['Skeleton'/118362, l='MpServer', x=649.50, y=27.00, z=-68.50], EntitySkeleton['Skeleton'/118363, l='MpServer', x=649.50, y=27.00, z=-69.50], EntityBat['Bat'/118320, l='MpServer', x=718.40, y=39.16, z=-11.17], EntityBat['Bat'/116330, l='MpServer', x=733.51, y=24.82, z=-51.26], EntityZombie['Zombie'/116278, l='MpServer', x=704.50, y=29.00, z=58.50], EntityZombie['Zombie'/116279, l='MpServer', x=708.50, y=29.00, z=56.50], EntityZombie['Zombie'/116277, l='MpServer', x=707.50, y=29.00, z=57.50], EntityBat['Bat'/118136, l='MpServer', x=583.65, y=53.00, z=-86.53], EntitySheep['Sheep'/80796, l='MpServer', x=648.19, y=63.00, z=-89.50], EntitySheep['Sheep'/80797, l='MpServer', x=649.50, y=63.00, z=-93.50], EntitySheep['Sheep'/80798, l='MpServer', x=658.50, y=63.00, z=-74.50], EntitySheep['Sheep'/80799, l='MpServer', x=656.50, y=63.00, z=-74.78], EntitySheep['Sheep'/80794, l='MpServer', x=651.50, y=63.00, z=-90.50], EntitySheep['Sheep'/80795, l='MpServer', x=649.78, y=63.00, z=-89.50], EntityZombie['Zombie'/118030, l='MpServer', x=598.50, y=19.00, z=-86.97], EntitySpider['Spider'/118026, l='MpServer', x=598.50, y=19.00, z=-85.09], EntitySheep['Sheep'/80801, l='MpServer', x=654.50, y=63.00, z=-78.50], EntitySheep['Sheep'/80800, l='MpServer', x=656.50, y=63.00, z=-73.19], EntityBat['Bat'/118218, l='MpServer', x=658.22, y=28.82, z=-84.31], EntityBat['Bat'/118217, l='MpServer', x=657.09, y=27.85, z=-85.38], EntityHecate['Hecate'/118254, l='MpServer', x=631.50, y=25.00, z=-70.50], EntityZombie['Zombie'/115975, l='MpServer', x=666.50, y=27.00, z=-66.50], EntityCreeper['Creeper'/115974, l='MpServer', x=654.50, y=27.00, z=-66.50], EntityZombie['Zombie'/115976, l='MpServer', x=663.50, y=27.00, z=-65.50], EntityZombie['Zombie'/117871, l='MpServer', x=630.50, y=16.00, z=-90.50], EntityZombie['Zombie'/117870, l='MpServer', x=629.50, y=16.00, z=-87.50], EntityBat['Bat'/115891, l='MpServer', x=589.44, y=55.01, z=-89.23], EntitySheep['Sheep'/80499, l='MpServer', x=641.22, y=63.00, z=22.38], EntitySheep['Sheep'/80498, l='MpServer', x=643.22, y=63.00, z=19.72], EntitySheep['Sheep'/80501, l='MpServer', x=642.44, y=63.00, z=22.78], EntitySheep['Sheep'/80500, l='MpServer', x=638.84, y=63.00, z=22.91], EntitySquid['Squid'/115475, l='MpServer', x=603.91, y=61.00, z=27.84], EntityManaElemental['Mana Elemental'/111844, l='MpServer', x=692.50, y=23.00, z=-80.50], EntityBat['Bat'/115377, l='MpServer', x=724.94, y=23.39, z=-68.00], EntityBat['Bat'/115388, l='MpServer', x=673.44, y=24.16, z=-83.56], EntitySquid['Squid'/111921, l='MpServer', x=688.47, y=61.09, z=-55.06], EntitySquid['Squid'/111935, l='MpServer', x=699.28, y=56.34, z=-74.53], EntityCreeper['Creeper'/117274, l='MpServer', x=634.50, y=32.00, z=-64.50], EntityCreeper['Creeper'/117275, l='MpServer', x=634.50, y=32.00, z=-63.50], EntityCreeper['Creeper'/117276, l='MpServer', x=634.50, y=32.00, z=-61.50], EntityCreeper['Creeper'/117277, l='MpServer', x=634.50, y=32.00, z=-66.50], EntitySquid['Squid'/111936, l='MpServer', x=693.97, y=55.84, z=-73.81], EntityCreeper['Creeper'/115400, l='MpServer', x=651.59, y=26.00, z=-78.97], EntitySkeleton['Skeleton'/113923, l='MpServer', x=704.03, y=34.00, z=-34.56], EntityCreeper['Creeper'/113925, l='MpServer', x=701.50, y=32.00, z=-38.50], EntityBat['Bat'/113988, l='MpServer', x=718.52, y=41.41, z=-32.34], EntityZombie['Zombie'/117470, l='MpServer', x=582.50, y=21.00, z=-92.50], EntityClientPlayerMP['DanSze'/53794, l='MpServer', x=652.69, y=65.62, z=-17.07], EntityZombie['Zombie'/117158, l='MpServer', x=631.50, y=18.00, z=-80.50], EntityCreeper['Creeper'/114995, l='MpServer', x=629.50, y=33.00, z=-71.50], EntityManaElemental['Mana Elemental'/117217, l='MpServer', x=695.38, y=29.00, z=-39.38], EntityManaElemental['Mana Elemental'/117219, l='MpServer', x=696.63, y=29.00, z=-40.56], EntitySkeleton['Skeleton'/116825, l='MpServer', x=610.00, y=61.00, z=-92.69], EntitySkeleton['Skeleton'/116826, l='MpServer', x=607.50, y=62.00, z=-93.50], EntitySkeleton['Skeleton'/116823, l='MpServer', x=605.50, y=62.00, z=-92.50], EntitySheep['Sheep'/82206, l='MpServer', x=687.25, y=63.00, z=-13.84], EntitySheep['Sheep'/82207, l='MpServer', x=687.91, y=63.00, z=-9.44], EntitySheep['Sheep'/82213, l='MpServer', x=687.50, y=63.00, z=33.50], EntitySheep['Sheep'/82212, l='MpServer', x=687.25, y=63.00, z=31.75], EntitySheep['Sheep'/82209, l='MpServer', x=686.38, y=63.00, z=-4.16], EntitySheep['Sheep'/82208, l='MpServer', x=689.03, y=63.00, z=-13.03], EntitySheep['Sheep'/82211, l='MpServer', x=678.16, y=63.00, z=24.84], EntitySheep['Sheep'/82210, l='MpServer', x=688.84, y=63.00, z=30.16], EntityBat['Bat'/114499, l='MpServer', x=650.08, y=27.60, z=-69.59], EntityZombie['Zombie'/116955, l='MpServer', x=714.50, y=38.00, z=-14.50], EntityZombie['Zombie'/116954, l='MpServer', x=714.50, y=38.00, z=-13.50]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:440)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2312)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:856)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.6.4
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 296253496 bytes (282 MB) / 619773952 bytes (591 MB) up to 954466304 bytes (910 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+	AABB Pool Size: 1281 (71736 bytes; 0 MB) allocated, 1221 (68376 bytes; 0 MB) used
+	Suspicious classes: FML and Forge are installed
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 63
+	FML: MCP v8.11 FML v6.4.30.933 Minecraft Forge 9.11.1.933 7 mods loaded, 7 mods active
+	mcp{8.09} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	FML{6.4.30.933} [Forge Mod Loader] (minecraftforge-9.11.1.933.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Forge{9.11.1.933} [Minecraft Forge] (minecraftforge-9.11.1.933.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	bspkrsCore{v4.1(1.6.4)} [bspkrsCore] ([1.6.4]bspkrsCorev4.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	mod_bspkrsCore{v4.1(1.6.4)} [bspkrsCore] ([1.6.4]bspkrsCorev4.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	TreeCapitator{Forge 1.6.4.r02} [Treecapitator] ([1.6.4]TreeCapitator.Forge.1.6.4.r02.Universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	arsmagica2{1.0.2b} [Ars Magica 2] (AM2_1.0.2b.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Launched Version: 1.6.4-Forge9.11.1.933
+	LWJGL: 2.9.0
+	OpenGL: GeForce GTX 770/PCIe/SSE2 GL version 4.3.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Pack: Default
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 597 (33432 bytes; 0 MB) allocated, 597 (33432 bytes; 0 MB) used

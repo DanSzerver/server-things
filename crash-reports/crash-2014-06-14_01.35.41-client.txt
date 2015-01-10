@@ -1,0 +1,104 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 6/14/14 1:35 AM
+Description: Rendering screen
+
+java.lang.OutOfMemoryError: Java heap space
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(SourceFile:24)
+	at net.minecraft.client.gui.GuiMainMenu.func_73866_w_(GuiMainMenu.java:152)
+	at net.minecraft.client.gui.GuiScreen.func_146280_a(GuiScreen.java:255)
+	at net.minecraft.client.Minecraft.func_147108_a(Minecraft.java:746)
+	at net.minecraft.client.Minecraft.func_71371_a(Minecraft.java:2085)
+	at cpw.mods.fml.client.FMLClientHandler.tryLoadExistingWorld(FMLClientHandler.java:669)
+	at net.minecraft.client.gui.GuiSelectWorld.func_146615_e(GuiSelectWorld.java:183)
+	at net.minecraft.client.gui.GuiSelectWorld$List.func_148144_a(GuiSelectWorld.java:257)
+	at net.minecraft.client.gui.GuiSlot.func_148128_a(GuiSlot.java:209)
+	at net.minecraft.client.gui.GuiSelectWorld.func_73863_a(GuiSelectWorld.java:216)
+	at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1061)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:944)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:835)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.texture.DynamicTexture.<init>(SourceFile:24)
+	at net.minecraft.client.gui.GuiMainMenu.func_73866_w_(GuiMainMenu.java:152)
+	at net.minecraft.client.gui.GuiScreen.func_146280_a(GuiScreen.java:255)
+	at net.minecraft.client.Minecraft.func_147108_a(Minecraft.java:746)
+	at net.minecraft.client.Minecraft.func_71371_a(Minecraft.java:2085)
+	at cpw.mods.fml.client.FMLClientHandler.tryLoadExistingWorld(FMLClientHandler.java:669)
+	at net.minecraft.client.gui.GuiSelectWorld.func_146615_e(GuiSelectWorld.java:183)
+	at net.minecraft.client.gui.GuiSelectWorld$List.func_148144_a(GuiSelectWorld.java:257)
+	at net.minecraft.client.gui.GuiSlot.func_148128_a(GuiSlot.java:209)
+	at net.minecraft.client.gui.GuiSelectWorld.func_73863_a(GuiSelectWorld.java:216)
+
+-- Screen render details --
+Details:
+	Screen name: net.minecraft.client.gui.GuiMainMenu
+	Mouse location: Scaled: (365, 207). Absolute: (1461, 705)
+	Screen size: Scaled: (800, 450). Absolute: (1600, 900). Scale factor of 2
+Stacktrace:
+	at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1061)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:944)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:835)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 5706904 bytes (5 MB) / 802750464 bytes (765 MB) up to 954466304 bytes (910 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+	AABB Pool Size: 1743 (97608 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 17, tallocated: 95
+	FML: MCP v9.03 FML v7.2.209.1112 Minecraft Forge 10.12.1.1112 21 mods loaded, 21 mods active
+	mcp{9.03} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	FML{7.2.209.1112} [Forge Mod Loader] (forge-1.7.2-10.12.1.1112.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Forge{10.12.1.1112} [Minecraft Forge] (forge-1.7.2-10.12.1.1112.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	CodeChickenCore{1.0.0} [CodeChicken Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	NotEnoughItems{1.0.1} [Not Enough Items] (NotEnoughItems-1.7.2-1.0.1-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	bspkrsCore{6.9} [bspkrsCore] ([1.7.2]bspkrsCore-universal-6.9.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Treecapitator{1.7.2} [Treecapitator] ([1.7.2]Treecapitator-universal-2.0.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BiblioCraft{1.7.1} [BiblioCraft] (BiblioCraft[1.7.1][MC1.7.2].jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Core{6.0.16} [BuildCraft] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Builders{6.0.16} [BC Builders] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Energy{6.0.16} [BC Energy] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Factory{6.0.16} [BC Factory] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Transport{6.0.16} [BC Transport] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	BuildCraft|Silicon{6.0.16} [BC Silicon] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	IC2{2.1.478-experimental} [IndustrialCraft 2] (industrialcraft-2-2.1.478-experimental.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Forestry{2.4.1.25} [Forestry for Minecraft] (forestry_1.7.2-2.4.1.25.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Mystcraft{0.10.15.00} [Mystcraft] (mystcraft-1.7.2-0.10.15.00.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Baubles{1.0.0.13} [Baubles] (Baubles-1.7.2-1.0.0.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Thaumcraft{4.1.1.14} [Thaumcraft] (Thaumcraft-1.7.2-4.1.1.14.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	voxelmap{1.7.2} [VoxelMap] (voxelmap-1.7.2-1.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	weaponmod{1.7.2 v1.14.2} [Balkon's WeaponMod] (weaponmod-1.14.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available->Available
+	Launched Version: 1.7.2-Forge10.12.1.1112
+	LWJGL: 2.9.0
+	OpenGL: GeForce GTX 770/PCIe/SSE2 GL version 4.4.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null
+	Anisotropic Filtering: Off (1)

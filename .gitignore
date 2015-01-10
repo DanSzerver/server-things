@@ -1,0 +1,11 @@
+versions/*
+textures*
+asm/*
+assets/*
+logs/*
+magic/*
+lastlogin
+launcher*
+saves/*
+options*
+stats/*

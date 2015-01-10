@@ -1,0 +1,98 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 24/10/13 7:06 PM
+Description: Unexpected error
+
+java.lang.NullPointerException
+	at thaumcraft.client.renderers.item.ItemThaumometerRenderer.doScan(ItemThaumometerRenderer.java:304)
+	at thaumcraft.client.renderers.item.ItemThaumometerRenderer.renderItem(ItemThaumometerRenderer.java:170)
+	at net.minecraftforge.client.ForgeHooksClient.renderEquippedItem(ForgeHooksClient.java:200)
+	at net.minecraft.client.renderer.ItemRenderer.renderItem(ItemRenderer.java:89)
+	at net.minecraft.client.renderer.ItemRenderer.func_78440_a(ItemRenderer.java:490)
+	at net.minecraft.client.renderer.EntityRenderer.func_78476_b(EntityRenderer.java:776)
+	at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1654)
+	at net.minecraft.client.renderer.EntityRenderer.func_78480_b(EntityRenderer.java:1115)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:946)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:838)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at thaumcraft.client.renderers.item.ItemThaumometerRenderer.doScan(ItemThaumometerRenderer.java:304)
+	at thaumcraft.client.renderers.item.ItemThaumometerRenderer.renderItem(ItemThaumometerRenderer.java:170)
+	at net.minecraftforge.client.ForgeHooksClient.renderEquippedItem(ForgeHooksClient.java:200)
+	at net.minecraft.client.renderer.ItemRenderer.renderItem(ItemRenderer.java:89)
+	at net.minecraft.client.renderer.ItemRenderer.func_78440_a(ItemRenderer.java:490)
+	at net.minecraft.client.renderer.EntityRenderer.func_78476_b(EntityRenderer.java:776)
+	at net.minecraft.client.renderer.EntityRenderer.func_78471_a(EntityRenderer.java:1654)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['DanSze'/2116, l='MpServer', x=-191.43, y=65.62, z=199.15]]
+	Chunk stats: MultiplayerChunkCache: 20
+	Level seed: 0
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (31,64,234), Chunk: (at 15,4,10 in 1,14; contains blocks 16,0,224 to 31,255,239), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 7079869 game time, 7281940 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 21 total; [EntityClientPlayerMP['DanSze'/2116, l='MpServer', x=-191.43, y=65.62, z=199.15], EntitySquid['Squid'/2264, l='MpServer', x=-159.94, y=60.00, z=219.50], EntitySquid['Squid'/2265, l='MpServer', x=-154.72, y=54.19, z=229.50], EntityBat['Bat'/2206, l='MpServer', x=-218.38, y=40.00, z=230.25], EntityZombie['Zombie'/2261, l='MpServer', x=-154.47, y=24.00, z=182.97], EntityCreeper['Creeper'/2262, l='MpServer', x=-144.50, y=21.00, z=193.91], EntityBrainyZombie['Angry Zombie'/2263, l='MpServer', x=-145.47, y=21.00, z=194.59], EntitySquid['Squid'/2252, l='MpServer', x=-166.44, y=59.00, z=227.66], EntityBat['Bat'/2117, l='MpServer', x=-182.44, y=32.94, z=190.45], EntityChicken['Chicken'/2249, l='MpServer', x=-166.16, y=55.00, z=193.16], EntityChicken['Chicken'/2248, l='MpServer', x=-169.38, y=54.00, z=196.91], EntitySquid['Squid'/2251, l='MpServer', x=-162.53, y=59.00, z=220.94], EntityChicken['Chicken'/2250, l='MpServer', x=-168.53, y=54.00, z=196.25], EntityChicken['Chicken'/2245, l='MpServer', x=-169.84, y=54.00, z=195.34], EntityChicken['Chicken'/2244, l='MpServer', x=-166.81, y=54.00, z=195.75], EntityChicken['Chicken'/2247, l='MpServer', x=-166.84, y=55.00, z=193.16], EntityChicken['Chicken'/2246, l='MpServer', x=-169.28, y=54.00, z=195.13], EntityChicken['Chicken'/2241, l='MpServer', x=-166.54, y=54.00, z=194.57], EntityItem['item.item.arrow'/2240, l='MpServer', x=-167.88, y=50.13, z=186.88], EntityChicken['Chicken'/2243, l='MpServer', x=-169.84, y=54.00, z=194.16], EntityChicken['Chicken'/2242, l='MpServer', x=-166.15, y=54.00, z=195.19]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:440)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2312)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:863)
+	at net.minecraft.client.main.Main.main(SourceFile:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:27)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.6.4
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 188539248 bytes (179 MB) / 471138304 bytes (449 MB) up to 954466304 bytes (910 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+	AABB Pool Size: 1039 (58184 bytes; 0 MB) allocated, 1039 (58184 bytes; 0 MB) used
+	Suspicious classes: FML and Forge are installed
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 63
+	FML: MCP v8.11 FML v6.4.30.933 Minecraft Forge 9.11.1.933 Optifine OptiFine_1.6.4_HD_U_C6 8 mods loaded, 8 mods active
+	mcp{8.09} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	FML{6.4.30.933} [Forge Mod Loader] (minecraftforge-9.11.1.933.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Forge{9.11.1.933} [Minecraft Forge] (minecraftforge-9.11.1.933.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	bspkrsCore{v4.1(1.6.4)} [bspkrsCore] ([1.6.4]bspkrsCorev4.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	mod_bspkrsCore{v4.1(1.6.4)} [bspkrsCore] ([1.6.4]bspkrsCorev4.1.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	TreeCapitator{Forge 1.6.4.r02} [Treecapitator] ([1.6.4]TreeCapitator.Forge.1.6.4.r02.Universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ExtrabiomesXL{3.14.2} [ExtrabiomesXL] (ExtrabiomesXL-universal-1.6.4-3.14.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Thaumcraft{4.0.2a} [Thaumcraft] (Thaumcraft4.0.2a.zip) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Launched Version: 1.6.4-Forge9.11.1.933
+	LWJGL: 2.9.0
+	OpenGL: GeForce GTX 770/PCIe/SSE2 GL version 4.3.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Pack: Default
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 1399 (78344 bytes; 0 MB) allocated, 1399 (78344 bytes; 0 MB) used

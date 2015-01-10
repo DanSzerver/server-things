@@ -1,0 +1,141 @@
+---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 7/8/14 10:18 PM
+Description: Updating screen events
+
+java.lang.NullPointerException: Updating screen events
+	at net.minecraft.item.ItemStack.func_77960_j(ItemStack.java:214)
+	at forestry.core.gui.slots.SlotCustom.determineValidity(SlotCustom.java:116)
+	at forestry.core.gui.slots.SlotCustom.func_75214_a(SlotCustom.java:80)
+	at net.minecraft.inventory.Container.func_75144_a(SourceFile:216)
+	at forestry.core.gui.ContainerForestry.func_75144_a(ContainerForestry.java:49)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.func_78753_a(PlayerControllerMP.java:419)
+	at codechicken.nei.guihook.GuiContainerManager.handleSlotClick(GuiContainerManager.java:534)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146984_a(GuiContainer.java:636)
+	at net.minecraft.client.gui.inventory.GuiContainer.public_func_146984_a(GuiContainer.java)
+	at codechicken.nei.guihook.DefaultSlotClickHandler.callHandleMouseClick(DefaultSlotClickHandler.java)
+	at codechicken.nei.guihook.DefaultSlotClickHandler.handleSlotClick(DefaultSlotClickHandler.java:17)
+	at codechicken.nei.guihook.GuiContainerManager.handleMouseClick(GuiContainerManager.java:464)
+	at net.minecraft.client.gui.inventory.GuiContainer.managerHandleMouseClick(GuiContainer.java)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146286_b(GuiContainer.java:605)
+	at forestry.core.gui.GuiForestry.func_146286_b(GuiForestry.java:224)
+	at net.minecraft.client.gui.GuiScreen.func_146274_d(GuiScreen.java:311)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146274_d(GuiContainer.java)
+	at net.minecraft.client.gui.GuiScreen.func_146269_k(GuiScreen.java:268)
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1579)
+	at net.minecraft.client.Minecraft.func_71411_J(Minecraft.java:916)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:835)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.item.ItemStack.func_77960_j(ItemStack.java:214)
+	at forestry.core.gui.slots.SlotCustom.determineValidity(SlotCustom.java:116)
+	at forestry.core.gui.slots.SlotCustom.func_75214_a(SlotCustom.java:80)
+	at net.minecraft.inventory.Container.func_75144_a(SourceFile:216)
+	at forestry.core.gui.ContainerForestry.func_75144_a(ContainerForestry.java:49)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.func_78753_a(PlayerControllerMP.java:419)
+	at codechicken.nei.guihook.GuiContainerManager.handleSlotClick(GuiContainerManager.java:534)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146984_a(GuiContainer.java:636)
+	at net.minecraft.client.gui.inventory.GuiContainer.public_func_146984_a(GuiContainer.java)
+	at codechicken.nei.guihook.DefaultSlotClickHandler.callHandleMouseClick(DefaultSlotClickHandler.java)
+	at codechicken.nei.guihook.DefaultSlotClickHandler.handleSlotClick(DefaultSlotClickHandler.java:17)
+	at codechicken.nei.guihook.GuiContainerManager.handleMouseClick(GuiContainerManager.java:464)
+	at net.minecraft.client.gui.inventory.GuiContainer.managerHandleMouseClick(GuiContainer.java)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146286_b(GuiContainer.java:605)
+	at forestry.core.gui.GuiForestry.func_146286_b(GuiForestry.java:224)
+	at net.minecraft.client.gui.GuiScreen.func_146274_d(GuiScreen.java:311)
+	at net.minecraft.client.gui.inventory.GuiContainer.func_146274_d(GuiContainer.java)
+	at net.minecraft.client.gui.GuiScreen.func_146269_k(GuiScreen.java:268)
+
+-- Affected screen --
+Details:
+	Screen name: forestry.storage.gui.GuiBackpack
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 2 total; [EntityClientPlayerMP['DanSze'/1417333, l='MpServer', x=-11.38, y=186.62, z=-28.19], EntityOtherPlayerMP['Undertoes'/1133388, l='MpServer', x=-9.03, y=185.00, z=-33.41]]
+	Chunk stats: MultiplayerChunkCache: 240, 240
+	Level seed: -7561988759369861899
+	Level generator: ID 00 - default, ver 1. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (0,0,0), Chunk: (at 0,0,0 in 0,0; contains blocks 0,0,0 to 15,255,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 0 game time, 0 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: ~~ERROR~~ NullPointerException: null
+	Forced entities: 22 total; [EntityCow['Cow'/1398737, l='MpServer', x=44.13, y=80.00, z=-20.91], EntityArrow['arrow'/1398736, l='MpServer', x=44.88, y=67.75, z=-50.03], EntitySheep['Sheep'/1398739, l='MpServer', x=62.13, y=70.00, z=-85.69], EntityArrow['arrow'/1398709, l='MpServer', x=-7.53, y=89.16, z=-19.75], EntitySheep['Sheep'/1398738, l='MpServer', x=46.78, y=72.00, z=-101.81], EntityArrow['arrow'/1398708, l='MpServer', x=-10.50, y=88.75, z=-16.34], EntityPig['Pig'/1398740, l='MpServer', x=47.88, y=63.00, z=46.09], EntityOtherPlayerMP['Undertoes'/1133388, l='MpServer', x=-9.03, y=185.00, z=-33.41], EntityAspectOrb['Aspect Orb'/1435362, l='MpServer', x=-14.19, y=185.06, z=-28.19], EntityZombie['Zombie'/1433179, l='MpServer', x=31.50, y=72.00, z=-17.50], EntitySheep['Sheep'/1398722, l='MpServer', x=-87.47, y=91.00, z=-49.47], EntityCow['Cow'/1398723, l='MpServer', x=-87.28, y=92.00, z=-33.81], EntityClientPlayerMP['DanSze'/1417333, l='MpServer', x=-11.38, y=186.62, z=-28.19], EntityAspectOrb['Aspect Orb'/1436168, l='MpServer', x=-11.94, y=114.48, z=-15.90], EntityWaypointContainer['unknown'/8031, l='MpServer', x=0.00, y=0.00, z=0.00], EntityCow['Cow'/1398726, l='MpServer', x=-47.63, y=72.00, z=-97.41], EntityAspectOrb['Aspect Orb'/1437290, l='MpServer', x=-4.09, y=173.06, z=-37.55], EntityOtherPlayerMP['Undertoes'/1133388, l='MpServer', x=-9.03, y=185.00, z=-33.41], EntityChicken['Chicken'/1398728, l='MpServer', x=-23.53, y=88.75, z=33.47], EntityItem['item.item.egg'/1398729, l='MpServer', x=-22.47, y=88.13, z=34.75], EntityPig['Pig'/1398731, l='MpServer', x=-19.53, y=72.00, z=49.72], EntityZombie['Zombie'/1398734, l='MpServer', x=30.50, y=71.00, z=-17.50]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.func_72914_a(WorldClient.java:368)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:2382)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:857)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:134)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Windows 8 (amd64) version 6.2
+	Java Version: 1.7.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 198650024 bytes (189 MB) / 636223488 bytes (606 MB) up to 954466304 bytes (910 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G
+	AABB Pool Size: 70285 (3935960 bytes; 3 MB) allocated, 2 (112 bytes; 0 MB) used
+	IntCache: cache: 13, tcache: 79, allocated: 1, tallocated: 13
+	FML: MCP v9.03 FML v7.2.209.1112 Minecraft Forge 10.12.1.1112 25 mods loaded, 25 mods active
+	mcp{9.03} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	FML{7.2.209.1112} [Forge Mod Loader] (forge-1.7.2-10.12.1.1112.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Forge{10.12.1.1112} [Minecraft Forge] (forge-1.7.2-10.12.1.1112.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	CodeChickenCore{1.0.0} [CodeChicken Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	NotEnoughItems{1.0.1} [Not Enough Items] (NotEnoughItems-1.7.2-1.0.1-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThaumicTinkerer-preloader{0.1} [Thaumic Tinkerer Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	bspkrsCore{6.9} [bspkrsCore] ([1.7.2]bspkrsCore-universal-6.9.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Treecapitator{1.7.2} [Treecapitator] ([1.7.2]Treecapitator-universal-2.0.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BiblioCraft{1.7.1} [BiblioCraft] (BiblioCraft[1.7.1][MC1.7.2].jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	AWWayofTime{v1.0.1g} [Blood Magic: Alchemical Wizardry] (Blood Magic-v1.0.1g.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Core{6.0.16} [BuildCraft] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Builders{6.0.16} [BC Builders] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Energy{6.0.16} [BC Energy] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Factory{6.0.16} [BC Factory] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Transport{6.0.16} [BC Transport] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	BuildCraft|Silicon{6.0.16} [BC Silicon] (buildcraft-6.0.16.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Baubles{1.0.0.13} [Baubles] (Baubles-1.7.2-1.0.0.13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Thaumcraft{4.1.1.14} [Thaumcraft] (Thaumcraft-1.7.2-4.1.1.14.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	IC2{2.1.478-experimental} [IndustrialCraft 2] (industrialcraft-2-2.1.478-experimental.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ThaumicTinkerer{2.4-147} [Thaumic Tinkerer] (ThaumicTinkerer-2.4-147.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	ForbiddenMagic{0.41b} [Forbidden Magic] (Forbidden Magic-1.7.2-0.41b.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Forestry{2.4.1.25} [Forestry for Minecraft] (forestry_1.7.2-2.4.1.25.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Mystcraft{0.10.15.00} [Mystcraft] (mystcraft-1.7.2-0.10.15.00.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	voxelmap{1.7.2} [VoxelMap] (voxelmap-1.7.2-1.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	weaponmod{1.7.2 v1.14.2} [Balkon's WeaponMod] (weaponmod-1.14.2.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available
+	Launched Version: 1.7.2-Forge10.12.1.1112
+	LWJGL: 2.9.0
+	OpenGL: GeForce GTX 770/PCIe/SSE2 GL version 4.4.0, NVIDIA Corporation
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 105 (5880 bytes; 0 MB) allocated, 18 (1008 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)

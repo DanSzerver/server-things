@@ -1,0 +1,66 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 1/9/15 7:54 PM
+Description: Exception in server tick loop
+
+java.lang.OutOfMemoryError: unable to create new native thread
+	at java.lang.Thread.start0(Native Method)
+	at java.lang.Thread.start(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.addWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.execute(Unknown Source)
+	at net.minecraftforge.common.util.AsynchronousExecutor.add(AsynchronousExecutor.java:246)
+	at net.minecraftforge.common.chunkio.ChunkIOExecutor.queueChunkLoad(ChunkIOExecutor.java:16)
+	at net.minecraft.world.gen.ChunkProviderServer.loadChunk(ChunkProviderServer.java:121)
+	at net.minecraft.server.management.PlayerManager$PlayerInstance.<init>(PlayerManager.java:370)
+	at net.minecraft.server.management.PlayerManager.func_72690_a(PlayerManager.java:97)
+	at net.minecraft.server.management.PlayerManager.func_72691_b(PlayerManager.java:174)
+	at net.minecraft.server.management.PlayerManager.func_72685_d(PlayerManager.java:267)
+	at net.minecraft.server.management.ServerConfigurationManager.func_72358_d(ServerConfigurationManager.java:300)
+	at net.minecraft.network.NetHandlerPlayServer.func_147347_a(NetHandlerPlayServer.java:404)
+	at net.minecraft.network.play.client.C03PacketPlayer.func_148833_a(SourceFile:137)
+	at net.minecraft.network.play.client.C03PacketPlayer$C04PacketPlayerPosition.func_148833_a(SourceFile:63)
+	at net.minecraft.network.NetworkManager.func_74428_b(NetworkManager.java:212)
+	at net.minecraft.network.NetworkSystem.func_151269_c(NetworkSystem.java:165)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:659)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:547)
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:111)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:427)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:685)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 8 (x86) version 6.2
+	Java Version: 1.8.0_20, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode), Oracle Corporation
+	Memory: 184162040 bytes (175 MB) / 685723648 bytes (653 MB) up to 1060372480 bytes (1011 MB)
+	JVM Flags: 6 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.85.1277 Minecraft Forge 10.13.2.1277 16 mods loaded, 16 mods active
+	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	FML{7.10.85.1277} [Forge Mod Loader] (forge-1.7.10-10.13.2.1277.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Forge{10.13.2.1277} [Minecraft Forge] (forge-1.7.10-10.13.2.1277.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	CodeChickenCore{1.0.4.29} [CodeChicken Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	<CoFH ASM>{000} [CoFH ASM Data Initialization] (minecraft.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	NotEnoughItems{1.0.3.74} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.3.74-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	bspkrsCore{6.15} [bspkrsCore] ([1.7.10]bspkrsCore-universal-6.15.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Treecapitator{1.7.10} [Treecapitator] ([1.7.10]Treecapitator-universal-2.0.4.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	AWWayofTime{v1.3.0a} [Blood Magic: Alchemical Wizardry] (BloodMagic-1.7.10-1.3.0a-1.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	CoFHCore{1.7.10R3.0.0B9} [CoFH Core] (CoFHCore-[1.7.10]3.0.0B9-40.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	EnderIO{1.7.10-2.2.6.317} [Ender IO] (EnderIO-1.7.10-2.2.6.317.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	EnderStorage{1.4.5.27} [EnderStorage] (EnderStorage-1.7.10-1.4.5.27-universal.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Thaumcraft{4.2.3.0} [Thaumcraft] (Thaumcraft-1.7.10-4.2.3.0.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	ThermalFoundation{1.7.10R1.0.0RC1} [Thermal Foundation] (ThermalFoundation-[1.7.10]1.0.0RC1-13.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	ThermalExpansion{1.7.10R4.0.0B8} [Thermal Expansion] (ThermalExpansion-[1.7.10]4.0.0B8-23.jar) Unloaded->Constructed->Pre-initialized->Initialized->Post-initialized->Available->Available->Available->Available
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['DanSze'/49, l='world', x=2.61, y=94.27, z=-0.42]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
